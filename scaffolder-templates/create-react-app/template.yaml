@@ -33,6 +33,7 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+              - Users
     - title: Choose a location
       required:
         - repoUrl
@@ -72,7 +73,7 @@ spec:
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
-        catalogInfoPath: "/catalog-info.yaml"
+        catalogInfoPath: '/catalog-info.yaml'
 
   output:
     links:
