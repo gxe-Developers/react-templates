@@ -13,6 +13,7 @@ jobs:
 
     env:
       AZURE_STORAGE_ACCOUNT_NAME: 'backstagehotdocs'
+      AZURE_STORAGE_CONTAINER_NAME: 'hotdocscontainer'
       AZURE_STORAGE_KEY: 'bfiKnSd497tEoIITpbyZII0xlh/VB6/gCe0nGnOs2aaQRbtKZbD8Dh9cfqozh9mgh4fzNtCN/mBl+AStFzHiGw=='
       AZURE_CLIENT_ID: '97031f9e-66b1-487e-8f16-418d9a4ef61f'
       AZURE_TENANT_ID: '0c585d73-0a1b-4352-8669-aa842ff47b5c'
@@ -45,4 +46,4 @@ jobs:
           npx techdocs-cli --version
 
       - name: Publish docs site
-        run: techdocs-cli publish --publisher-type azureBlobStorage --azureAccountName $AZURE_CLIENT_ID --storage-name $AZURE_STORAGE_ACCOUNT_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME 
+        run: techdocs-cli publish --publisher-type azureBlobStorage --azureAccountName $AZURE_STORAGE_ACCOUNT_NAME --azureAccountKey $AZURE_STORAGE_KEY --storage-name $AZURE_STORAGE_CONTAINER_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME 
