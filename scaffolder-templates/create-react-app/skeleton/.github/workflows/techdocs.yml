@@ -20,8 +20,7 @@ jobs:
       AZURE_CLIENT_SECRET: 'WsP8Q~JWoaRJ~fGGomYI~thNFR8rVvk1hXVxndof'
       ENTITY_NAMESPACE: 'default'
       ENTITY_KIND: 'component'
-      ENTITY_NAME: 'software-templates'
-
+      ENTITY_NAME: ${{ github.repository }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
